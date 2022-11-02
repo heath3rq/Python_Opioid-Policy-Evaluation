@@ -8,7 +8,6 @@ pds-2022-red-team created by GitHub Classroom
 
 
 
-(to be filled out later)
 ## Project Description
 ## Data Overview
 ## Our analysis
