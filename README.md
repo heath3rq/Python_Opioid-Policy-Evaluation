@@ -4,12 +4,18 @@ pds-2022-red-team created by GitHub Classroom
 ## Key Project Due Dates
 * Nov 8th, project strategy plan due
 * Nov 22nd, preliminary draft of project report
++ YOUR REPORT YOUR PLOTS SHOULD INCLUDE STANDARD ERROR BANDS!
++ use these units of observation: per county per year
 * Dec 9th, final draft of project report
-* 
+
 ## Project Description
 * Project Question: what is the effect of opioid drug prescription regulations on (1) the volume of opioids prescribed and (2) drug overdose deaths.
 
 ## Data Overview
+For this project, we looked at the following data: 
+* opioid prescriptions
+* drug overdose mortality
+* [FROM INSTRUCTION] You will also likely need at least one other source of data, which you will be required to find on your own.
 
 ## Data Analysis
 * Pre-Post Comparison: compares the volume of opioids prescribed and drug overdose death in a state before and after drug prescription regulations went into effect. 
