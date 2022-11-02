@@ -9,6 +9,8 @@ pds-2022-red-team created by GitHub Classroom
 
 
 ## Project Description
+* Project Question: what is the effect of opioid drug prescription regulations on (1) the volume of opioids prescribed and (2) drug overdose deaths.
+
 ## Data Overview
 ## Our analysis
 ## Conclusion
