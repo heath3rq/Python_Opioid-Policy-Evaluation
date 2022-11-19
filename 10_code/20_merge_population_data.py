@@ -208,7 +208,7 @@ assert (len(pop_00_20.County.unique() == 1897)) & (len(pop_00_20.State.unique() 
 assert len(pop_00_20.FIPS.unique()) == 3115
 
 pop_00_20.to_csv(
-    "/Users/qiujiahui/Desktop/Fall 2022/IDS 720 Practical Data Science/Group Project/pds-2022-red-team/20_intermediate_files/pop_merged.csv",
+    "https://github.com/MIDS-at-Duke/pds-2022-red-team/raw/main/20_intermediate_files/pop_merged.csv",
     encoding="utf-8",
     index=False,
 )

@@ -46,8 +46,7 @@ mortality_cp.drop(
 ##### No Adjustment is needed because the change happened close to 2015 and we have almost complete data for Bedford city from 2003 to 2015. Therefore, we will continue to treat it as an independent city
 
 mortality_cp.to_csv(
-    "/Users/qiujiahui/Desktop/Fall 2022/IDS 720 Practical Data Science/Group Project/"
-    "pds-2022-red-team/20_intermediate_files/mortality_cleaned.csv",
+    "https://github.com/MIDS-at-Duke/pds-2022-red-team/raw/main/20_intermediate_files/mortality_cleaned.csv",
     encoding="utf-8",
     index=False,
 )
