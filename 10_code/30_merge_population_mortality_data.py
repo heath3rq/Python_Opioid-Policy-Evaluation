@@ -6,7 +6,8 @@ import numpy as np
 
 ## Read into tables
 mortality = pd.read_csv(
-    "https://github.com/MIDS-at-Duke/pds-2022-red-team/raw/main/20_intermediate_files/mortality_cleaned.csv"
+    "https://github.com/MIDS-at-Duke/pds-2022-red-team/raw/main/20_intermediate_files/mortality_cleaned.csv",
+    usecols=["County Code", "Year", "Deaths"],
 )
 pop = pd.read_csv(
     "https://github.com/MIDS-at-Duke/pds-2022-red-team/raw/main/20_intermediate_files/pop_merged.csv",
@@ -22,7 +23,7 @@ pop_mortality_03_15 = pop.merge(
     how="outer",
     validate="m:m",
     indicator=True,
-).drop(["County_State", "County Code"], axis=1)
+).drop(["County Code"], axis=1)
 assert len(pop_mortality_03_15.fips.unique()) == 3114
 
 
@@ -95,7 +96,10 @@ assert pop_death_03_15.drug_mortality_per_capita.notnull().all()
 
 
 pop_death_03_15.to_csv(
-    "https://github.com/MIDS-at-Duke/pds-2022-red-team/raw/main/20_intermediate_files/pop_mortality_merged.csv",
+    ## Imputation Method 1
+    "https://github.com/MIDS-at-Duke/pds-2022-red-team/raw/main/20_intermediate_files/pop_mortality_merged_no_imputation.csv",
+    ## Imputation Method 2
+    # "https://github.com/MIDS-at-Duke/pds-2022-red-team/raw/main/20_intermediate_files/pop_mortality_merged.csv",
     encoding="utf-8",
     index=False,
 )
