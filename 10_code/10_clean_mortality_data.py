@@ -1,4 +1,4 @@
-## CleanUp Mortality Dataset
+## Cleanup Mortality Dataset
 ## Import necessary dependencies
 import pandas as pd
 import numpy as np
@@ -9,7 +9,7 @@ mortality = pd.read_csv(
     "raw/main/20_intermediate_files/mortality_data.csv"
 )
 
-## Drop a column and remove Alaska from the data
+## Drop  Alaska from the data
 mortality_df = mortality[mortality["County"].str.contains(", AK") == False].copy()
 
 ## Rename the county coulmn to avoid confusion
