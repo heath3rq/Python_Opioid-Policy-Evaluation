@@ -1,24 +1,15 @@
-# %%
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from plotnine import *
 import os
 
-# %%
+
 # Read data
 df = pd.read_csv(
     "https://raw.githubusercontent.com/MIDS-at-Duke/pds-2022-red-team/main/20_intermediate_files/pop_mortality_merged_no_imputation.csv"
 )
 
-# %%
-# Take a peep:
-df.head()
-
-# %%
-df.isnull().sum()
-
-# %%
 #### post_analysis
 def post_analysis(df, main_state, year_implementation, counter_state):
     """
@@ -70,22 +61,21 @@ def post_analysis(df, main_state, year_implementation, counter_state):
     print(g)
 
 
-# %%
 ##### Florida #####
 ##### Effective February, 2010
 post_analysis(df, "FL", 2010, [])
 
-# %%
+
 ##### Washington #####
 ##### Effective Jan 2, 2012
 post_analysis(df, "WA", 2012, [])
 
-# %%
+
 ##### Texas ####
 ##### Effective Jan 4, 2007
 post_analysis(df, "TX", 2007, [])
 
-# %%
+
 #### DID ####
 # WA: OR, CA, NV, ID, MT
 # TX: NM, OK, LA, AZ, CO
@@ -140,19 +130,18 @@ def did_graph(df, state_compare, year_implementaion, main_state):
     print(g)
 
 
-# %%
 florida = ["FL", "GA", "SC", "AL", "MS", "LA"]
 Washington = ["WA", "OR", "CA", "NV", "ID", "MT"]
 Texas = ["TX", "NM", "OK", "LA", "AZ", "CO"]
 
-# %%
+
 ##### Florida #####
 did_graph(df, florida, 2010, "FL")
 
-# %%
+
 ##### Texas ####
 did_graph(df, Texas, 2007, "TX")
 
-# %%
+
 ##### Washington #####
 did_graph(df, Washington, 2012, "WA")
