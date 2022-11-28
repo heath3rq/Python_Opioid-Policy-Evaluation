@@ -75,5 +75,5 @@ WA_pres_pop["Shipment Rate Per Capita"] = WA_pres_pop["MME"] / WA_pres_pop["Popu
 
 WA_pres_pop.to_csv(
     # "https://github.com/MIDS-at-Duke/pds-2022-red-team/raw/main/20_intermediate_files/FL_and_controls_pres_pop_merge.csv",
-    "/Users/jennyshen/Downloads/WA_and_controls_pop_merge.csv",
+    "/Users/jennyshen/Downloads/WA_and_controls_pres_pop_merge.csv",
 )
