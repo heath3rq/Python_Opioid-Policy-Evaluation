@@ -70,7 +70,9 @@ WA_pres_pop = pd.merge(
     indicator=True,
 )
 
-WA_pres_pop["Shipment Rate Per Capita"] = WA_pres_pop["MME"] / WA_pres_pop["Population"]
+WA_pres_pop["Prescription Rate Per Capita"] = (
+    WA_pres_pop["MME"] / WA_pres_pop["Population"]
+)
 
 
 WA_pres_pop.to_csv(
