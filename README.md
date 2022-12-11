@@ -14,6 +14,6 @@ For this project, we looked at the following data:
   + Washington. Effective Jan 2, 2012. 
 * Difference-in-Difference Approach: evaluates whether the change identified in the pre-post comparison is larger than the change that occurred in other states over the same period. 
 
-## Full report [here](https://github.com/MIDS-at-Duke/pds-2022-red-team/blob/main/40_docs/IDS720_TeamRed_Opioids_FinalReport.pdf) 
+## Full Report ([Link](https://github.com/MIDS-at-Duke/pds-2022-red-team/blob/main/40_docs/IDS720_TeamRed_Opioids_FinalReport.pdf))
 
-## Video Presentation ([link](https://youtu.be/CQopxFhuxdY))
+## Video Presentation ([Link](https://youtu.be/CQopxFhuxdY))
