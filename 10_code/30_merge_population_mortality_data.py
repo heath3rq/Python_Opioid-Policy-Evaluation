@@ -62,44 +62,27 @@ assert len(pop_mortality_states.State.unique()) == 17
 pop_mortality_states["Population"] = pop_mortality_states["Population"].astype(int)
 pop_mortality_states["Deaths"] = pop_mortality_states["Deaths"].astype(float)
 
-
-pop_mortality_states._merge.value_counts()
-
-
-pop_mortality_states[pop_mortality_states._merge == "left_only"]
-
+## Due to the privacy censorship, we do not have data for smaller counties with less than 10 deaths.
+## We decided to impute these counties with missing mortality data using the average deaths of their states in a given year.
+pop_mortality_states["MeanDeath"] = (
+    pop_mortality_states.groupby(["Year", "State"])["Deaths"].transform("sum")
+) / (pop_mortality_states.groupby(["Year", "State"])["County"].transform("count"))
+pop_mortality_states["Deaths_Inputed"] = pop_mortality_states["Deaths"].fillna(
+    pop_mortality_states["MeanDeath"]
+)
 
 ## Calculate drug mortality rate
 pop_death_03_15 = pop_mortality_states.copy()
 pop_death_03_15["drug_mortality_per_capita"] = (
-    pop_death_03_15["Deaths"] / pop_death_03_15["Population"]
+    pop_death_03_15["Deaths_Inputed"] / pop_death_03_15["Population"]
 )
-
-## Due to the privacy censorship, we do not have data for smaller counties with less than 10 deaths.
-
-## Imputation method 1: DO NOTHING as the 224 counties with no mortality data are really small
-pop_death_03_15["drug_mortality_per_capita"] = pop_death_03_15[
-    "drug_mortality_per_capita"
-].fillna(0)
-
-## Imputation method 2: To avoid potentially overinflation of death rate, we decided to assume a 0.01 death rate for small counties missing death data.
-## This aligns with the domain knowlege that death is proportional to the population size.
-# pop_death_03_15["drug_mortality_per_capita"] = pop_death_03_15.apply(
-#     lambda row: 0.01
-#     if np.isnan(row["drug_mortality_per_capita"])
-#     else row["drug_mortality_per_capita"],
-#     axis=1,
-# )
 
 # Comfirm there is no row with missing mortality per capita
 assert pop_death_03_15.drug_mortality_per_capita.notnull().all()
 
 
 pop_death_03_15.to_csv(
-    ## Imputation Method 1
-    "https://github.com/MIDS-at-Duke/pds-2022-red-team/raw/main/20_intermediate_files/pop_mortality_merged_no_imputation.csv",
-    ## Imputation Method 2
-    # "https://github.com/MIDS-at-Duke/pds-2022-red-team/raw/main/20_intermediate_files/pop_mortality_merged.csv",
+    "https://github.com/MIDS-at-Duke/pds-2022-red-team/raw/main/20_intermediate_files/pop_mortality_merged_mean_imputation.csv",
     encoding="utf-8",
     index=False,
 )
