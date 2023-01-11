@@ -22,6 +22,6 @@ Two types of analyses were performed: the pre-post analysis and the difference-i
 ## Conclusion
 The series of legislations in Florida proves to be the most effective in limiting opioid shipments and moderately effective in reducing drug overdose deaths. Texas’s approach to combating the opioid epidemic also had a positive impact on lowering the mortality rate. We observed a slow decline in drug-induced mortality after the state legislation went into effect. On the contrary, the policy intervention in Washington seemed to be the least effective. Overdose deaths continued to increase even at a faster rate than before policy changes. While opioid shipments dropped initially and then plateaued after policy adoption in Washington, the surrounding states experienced similar trends. Therefore, we cannot attribute the reduction in opioid shipments to the state’s legislative actions.
 
-## Full Report ([Link](https://github.com/MIDS-at-Duke/pds-2022-red-team/blob/main/40_docs/IDS720_TeamRed_Opioids_FinalReport.pdf))
+## [Full Report](40_docs/IDS720_TeamRed_Opioids_FinalReport.pdf)
 
-## Video Presentation ([Link](https://youtu.be/CQopxFhuxdY))
+## [Video Presentation](https://youtu.be/CQopxFhuxdY)
